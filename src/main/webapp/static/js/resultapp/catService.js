@@ -1,5 +1,5 @@
 'use strict';
-var App = angular.module('uploadApp', []);
+var App = angular.module('resultApp', []);
 
 App.factory('catService', ['$http', '$q', 'urls', function ($http, $q, urls) {
 
