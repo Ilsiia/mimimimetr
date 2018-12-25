@@ -3,13 +3,13 @@ App.controller('catController',
 
         $scope.cat = {name: '', pict: ''};
 
-        $scope.upload = function () {
+        $scope.save = function () {
             var cat = $scope.cat;
             catService.saveCat(cat)
                 .then(
                     function () {
-                        alert("file uploaded successfully.");
-                        $http.get(urls.CAT_URL + 'upload').then(
+                        alert("cat saved successfully.");
+                        $http.get(urls.CAT_URL + 'save').then(
                             function (response) {
                                 $rootScope.catList = response;
                             });
@@ -44,7 +44,7 @@ App.directive('fileModel', ['$parse', function ($parse) {
 }]);
 
 App.run(function ($rootScope, $http, urls) {
-    $http.get(urls.CAT_URL + 'upload').then(
+    $http.get(urls.CAT_URL + 'save').then(
         function (response) {
             $rootScope.catList = response.data;
         });

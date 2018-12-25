@@ -26,7 +26,7 @@ public class CatController {
         this.catService = catService;
     }
 
-    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     @ResponseBody
     public ResponseMetadata handleFileUpload(@RequestParam(value = "name") String name, @RequestParam(value = "pict") MultipartFile pict) throws IOException {
         Cat cat = new Cat();
@@ -40,7 +40,7 @@ public class CatController {
     }
 
 
-    @RequestMapping(value = "/upload", method = RequestMethod.GET)
+    @RequestMapping(value = "/save", method = RequestMethod.GET)
     @ResponseBody
     public List<Cat> getTop() {
         return catService.getTop();

@@ -13,7 +13,7 @@
     <div class="panel panel-default">
         <div class="panel-heading"><span class="lead">Добавить конкурсанта</span></div>
         <div class="formcontainer">
-            <form ng-submit="upload()" class="form-horizontal">
+            <form ng-submit="save()" class="form-horizontal">
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-2 control-lable">Имя</label>
