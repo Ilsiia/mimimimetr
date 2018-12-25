@@ -5,8 +5,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Mimimimetr</title>
-    <link rel="stylesheet" href="../../static/css/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="../../static/css/styles/app.css">
+    <link rel="stylesheet" href="/css/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles/app.css">
 </head>
 <body ng-controller="voteController" class="ng-cloak">
 <div class="generic-container">
@@ -25,10 +25,10 @@
         </div>
     </div>
 </div>
-<script src="../../static/lib/jquery-2.2.1.min.js"></script>
-<script src="../../static/lib/bootstrap.min.js"></script>
-<script src="../../static/lib/angular.min.js"></script>
-<script src="../../static/js/voteapp/vService.js"></script>
-<script src="../../static/js/voteapp/app.js"></script>
+<script src="/lib/jquery-2.2.1.min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<script src="/lib/angular.min.js"></script>
+<script src="/js/voteapp/vService.js"></script>
+<script src="/js/voteapp/app.js"></script>
 </body>
 </html>

@@ -20,7 +20,7 @@ App.controller('catController',
 
 
 App.constant('urls', {
-    CAT_URL: 'http://localhost:8080/cat/'
+    CAT_URL: '/cat/'
 });
 
 App.directive('fileModel', ['$parse', function ($parse) {

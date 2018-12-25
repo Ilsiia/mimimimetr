@@ -5,8 +5,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Mimimimetr</title>
-    <link rel="stylesheet" href="../../static/css/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="../../static/css/styles/app.css">
+    <link rel="stylesheet" href="/css/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles/app.css">
 </head>
 <body ng-controller="catController" class="ng-cloak">
 <div class="generic-container">
@@ -39,6 +39,10 @@
                 </div>
             </form>
         </div>
+    </div>
+</div>
+<div class="generic-container">
+    <div class="panel panel-default">
         <div class="panel panel-default">
             <!-- Default panel contents -->
             <div class="panel-heading"><span class="lead">Топ 10</span></div>
@@ -65,10 +69,11 @@
         </div>
     </div>
 </div>
-<script src="../../static/lib/jquery-2.2.1.min.js"></script>
-<script src="../../static/lib/bootstrap.min.js"></script>
-<script src="../../static/lib/angular.min.js"></script>
-<script src="../../static/js/resultapp/catService.js"></script>
-<script src="../../static/js/resultapp/app.js"></script>
+<script src="/lib/jquery-2.2.1.min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<script src="/lib/angular.min.js"></script>
+<script src="/js/resultapp/catService.js"></script>
+<script src="/js/resultapp/app.js"></script>
 </body>
 </html>
+

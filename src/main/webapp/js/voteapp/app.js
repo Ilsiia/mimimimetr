@@ -16,12 +16,12 @@ App.controller('voteController',
                 $rootScope.twoCat = ($rootScope.catRandomeList)[i];
                 $rootScope.index = i;
             } else {
-                window.location.replace('http://localhost:8080/result');
+                window.location.replace('/result');
             }
         }
     }
     ]);
 
 App.constant('urls', {
-    VOTE_URL: 'http://localhost:8080/vote/'
+    VOTE_URL: '/vote/'
 });
