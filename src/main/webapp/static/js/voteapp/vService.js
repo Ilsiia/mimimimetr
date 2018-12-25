@@ -19,7 +19,7 @@ App.factory('vService', ['$http', '$q', 'urls', function ($http, $q, urls) {
         })
             .then(
                 function (response) {
-                    deferred.resolve(response.data);
+                    deferred.resolve(response);
                 },
                 function (errResponse) {
                     deferred.reject(errResponse);

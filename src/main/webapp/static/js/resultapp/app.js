@@ -1,23 +1,19 @@
 App.controller('catController',
-    ['$scope', '$rootScope', 'catService', '$http', function ($scope, $rootScope, catService, $http) {
+    ['$scope', '$rootScope', 'catService', '$http', 'urls', function ($scope, $rootScope, catService, $http, urls) {
 
         $scope.cat = {name: '', pict: ''};
 
         $scope.save = function () {
             var cat = $scope.cat;
-            catService.saveCat(cat)
-                .then(
-                    function () {
-                        alert("cat saved successfully.");
-                        $http.get(urls.CAT_URL + 'save').then(
-                            function (response) {
-                                $rootScope.catList = response;
-                            });
-                    },
-                    function (errResponse) {
-
-                    }
-                );
+            catService.saveCat(cat).then(
+                function () {
+                    alert("cat saved successfully.");
+                    $http.get(urls.CAT_URL).then(
+                        function (response) {
+                            $rootScope.catList = response.data;
+                        });
+                }
+            );
         }
     }
     ]);
@@ -44,7 +40,7 @@ App.directive('fileModel', ['$parse', function ($parse) {
 }]);
 
 App.run(function ($rootScope, $http, urls) {
-    $http.get(urls.CAT_URL + 'save').then(
+    $http.get(urls.CAT_URL).then(
         function (response) {
             $rootScope.catList = response.data;
         });

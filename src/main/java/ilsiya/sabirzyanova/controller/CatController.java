@@ -40,7 +40,7 @@ public class CatController {
     }
 
 
-    @RequestMapping(value = "/save", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public List<Cat> getTop() {
         return catService.getTop();
