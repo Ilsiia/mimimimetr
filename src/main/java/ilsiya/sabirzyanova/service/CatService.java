@@ -14,4 +14,6 @@ public interface CatService {
 
     List<Cat> getAll();
 
+    List<Cat[]> getShuffleList();
+
 }

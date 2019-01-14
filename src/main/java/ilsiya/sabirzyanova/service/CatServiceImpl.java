@@ -7,8 +7,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 @Lazy
@@ -39,6 +38,22 @@ public class CatServiceImpl implements CatService {
     @Override
     public List<Cat> getAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public List<Cat[]> getShuffleList() {
+        List<Cat[]> result = new ArrayList<>();
+        List<Cat> cats = getAll();
+        Collections.shuffle(cats);
+        int pairCount = cats.size() / 2;
+        for (int i = 0; i < pairCount * 2 - 1; i = i + 2) {
+            result.add(new Cat[]{cats.get(i), cats.get(i + 1)});
+        }
+        boolean even = cats.size() % 2 == 0;
+        if (!even) {
+            result.add(new Cat[]{cats.get(new Random().nextInt(cats.size() - 2)), cats.get(cats.size() - 1)});
+        }
+        return result;
     }
 
 }

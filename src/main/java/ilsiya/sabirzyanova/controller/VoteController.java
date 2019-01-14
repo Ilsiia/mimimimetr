@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.*;
+import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping(value = "/vote")
@@ -26,18 +27,7 @@ public class VoteController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public List<Cat[]> getShuffleList() {
-        List<Cat[]> result = new ArrayList<>();
-        List<Cat> cats = catService.getAll();
-        Collections.shuffle(cats);
-        int pairCount = cats.size() / 2;
-        for (int i = 0; i < pairCount * 2 - 1; i = i + 2) {
-            result.add(new Cat[]{cats.get(i), cats.get(i + 1)});
-        }
-        boolean even = cats.size() % 2 == 0;
-        if (!even) {
-            result.add(new Cat[]{cats.get(new Random().nextInt(cats.size() - 2)), cats.get(cats.size() - 1)});
-        }
-        return result;
+        return catService.getShuffleList();
     }
 
     @RequestMapping(value = "/rating", method = RequestMethod.POST)
