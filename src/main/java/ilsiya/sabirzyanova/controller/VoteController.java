@@ -5,7 +5,10 @@ import ilsiya.sabirzyanova.model.ResponseMetadata;
 import ilsiya.sabirzyanova.service.CatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.*;
 
@@ -39,8 +42,9 @@ public class VoteController {
 
     @RequestMapping(value = "/rating", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseMetadata handleFileUpload(@RequestParam(value = "catId") UUID id) {
+    public ResponseMetadata ratingUpdate(@RequestParam(value = "catId") UUID id) {
         Cat entity = catService.getById(id);
+        System.out.println("rating:" + entity.getRating());
         int rating = entity.getRating() + 1;
         entity.setRating(rating);
         catService.saveOrUpdate(entity);
