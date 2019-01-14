@@ -16,4 +16,6 @@ public interface CatService {
 
     List<Cat[]> getShuffleList();
 
+    void voteForCat(UUID catId);
+
 }

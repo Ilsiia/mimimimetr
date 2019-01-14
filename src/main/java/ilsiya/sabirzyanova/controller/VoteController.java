@@ -33,11 +33,7 @@ public class VoteController {
     @RequestMapping(value = "/rating", method = RequestMethod.POST)
     @ResponseBody
     public ResponseMetadata ratingUpdate(@RequestParam(value = "catId") UUID id) {
-        Cat entity = catService.getById(id);
-        System.out.println("rating:" + entity.getRating());
-        int rating = entity.getRating() + 1;
-        entity.setRating(rating);
-        catService.saveOrUpdate(entity);
+        catService.voteForCat(id);
         ResponseMetadata metadata = new ResponseMetadata();
         metadata.setMessage("success");
         metadata.setStatus(200);

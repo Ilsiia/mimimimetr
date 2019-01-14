@@ -56,4 +56,12 @@ public class CatServiceImpl implements CatService {
         return result;
     }
 
+    @Override
+    public synchronized void voteForCat(UUID catId) {
+        Cat entity = getById(catId);
+        System.out.println("rating " + entity.getName() + ": " + entity.getRating());
+        int rating = entity.getRating() + 1;
+        entity.setRating(rating);
+        saveOrUpdate(entity);
+    }
 }
